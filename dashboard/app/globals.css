@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 224 44% 7%;
+  --foreground: 210 28% 90%;
+  --card: 224 44% 10%;
+  --card-foreground: 210 28% 90%;
+  --border: 220 30% 16%;
+  --muted: 222 40% 13%;
+  --muted-foreground: 217 18% 52%;
+  --accent: 217 72% 58%;
+  --accent-foreground: 210 28% 90%;
+  --primary: 217 72% 58%;
+  --primary-foreground: 224 44% 7%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Native selects on dark bg */
+option {
+  background: hsl(224, 44%, 10%);
+  color: hsl(210, 28%, 90%);
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* Recharts */
+.recharts-tooltip-wrapper { outline: none !important; }
+.custom-tooltip {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Code blocks */
+.code-block { overflow: hidden; }
+.code-block pre {
+  margin: 0 !important;
+  background: hsl(224, 44%, 5%) !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
